@@ -36,14 +36,10 @@ const iptName = document.querySelector("#iptName");
 const btnEnviar = document.getElementById("btnEnviar");
 
 btnEnviar.addEventListener("click", () => {
-  console.log("epa");
   handleCreateUser();
 });
 
 function handleCreateUser() {
-  console.log("qualquer coisa");
-  console.log(iptID.value);
-  console.log(iptName.value);
   const user = { id: +iptID.value, name: iptName.value };
 
   fetch("http://localhost:3333/createuser", {
