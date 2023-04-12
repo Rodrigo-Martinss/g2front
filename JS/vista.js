@@ -15,12 +15,12 @@ btnViewVisits.addEventListener("click", () => {
 });
 
 function handleGetUsers() {
-  console.log("opa");
   const result = fetch("http://localhost:3333/")
     .then((response) => response.json())
     .then((response) => {
       response.map((user) => {
         const li = document.createElement("li");
+        li.setAttribute("id", "li-visualizar");
         const text = document.createTextNode(user.name);
 
         li.appendChild(document.createTextNode(user.name));
