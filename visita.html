@@ -1,75 +1,67 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/vista.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Visitas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/vista.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <title>Visitas</title>
 </head>
+
 <body>
-    <header id="header">
+  <header id="header">
     <a id="logo" src="http://cloud47.p80.com.br:8080/g2mob/resources/img/g2-logo.png">G2 Sistemas</a>
     <nav id="nav">
-        <button id="btnSanduiche">Menu</button>            
-       <ul id="menu">
-        <li><a href="#">Cadastrar Visitas</a></li>
-        <li><button  id="btnViewVisits">Visualizar Visitas</button></li>
-       </ul> 
+      <button id="btnSanduiche">Menu</button>
+      <ul id="menu">
+        <li><button id="btnCadastrar" onclick="openModal()">Cadastrar Visitass</li><button>
+          <li><button onlclick="handleGetUsers()" id="btnViewVisits">Visualizar Visitas</button></li>
+      </ul>
     </nav>
-    </header>
-    <section>
-        <ul id="lista">
-        <div id="inpustBTN">
-            <input type="number" id="iptId">
-            <input type="text" id="iptName">
-            <button id="btnEnviar" onclick="handleCreateUser">enviar</button>
-        </div>
-    </section>
+  </header>
+<section>
+  <div class="formulario">
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Tecnico</th>
+            <th>Cliente</th>
+            <th>Solicitação</th>
+            <th>Parecer Técnico</th>
+            <button type="checkbox">
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
-    <div class="formulario">
-        <div class="form">
-            <span>Cadastro de Funcionários</span>
-            <button onclick="openModal()" id="new">Incluir</i></button>
-          </div>
-      
-          <div class="divTable">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>Função</th>
-                  <th>Salário</th>
-                  <th class="acao">Editar</th>
-                  <th class="acao">Excluir</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-      
-          <div class="modal-container">
-            <div class="modal">
-              <form>
-                <label for="m-nome">Nome</label>
-                <input id="m-nome" type="text" required />
-        
-                <label for="m-funcao">Função</label>
-                <input id="m-funcao" type="text" required />
-        
-                <label for="m-salario">Salário</label>
-                <input id="m-salario" type="number" required />
-                <button id="btnSalvar">Salvar</button>
-              </form>
-            </div>
-          </div>
-      
-        </div>
-<script src="JS/vista.js">
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <label for="m-tecnico">Tecnico</label>
+          <input id="m-tecnico" type="text" required />
 
-</script>
+          <label for="m-cliente">Cliente</label>
+          <input id="m-cliente" type="text" required />
+
+          <label for="m-solicitacao">Solicitação</label>
+          <input id="m-solicitacao" type="text" required />
+          <button id="btnSalvar">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>  
+  <script src="JS/vista.js" defer>
+
+  </script>
 </body>
+
 </html>

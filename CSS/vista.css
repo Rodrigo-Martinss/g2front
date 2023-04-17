@@ -13,8 +13,9 @@ button {
     background: white;
   }
 
-  .formulario {
-    padding: 20px;
+  #formulario {
+    padding-top: 0;
+    padding: 10px;
     display: block;
     text-align: center;
     width: 90%;
@@ -37,15 +38,33 @@ button {
     word-break: break-all;
   }
   
-  #new {
+  #btnCadastrar {
     font-size: 16px;
     padding: 8px;
     border-radius: 5px;
     border: none;
     color: white;
-    background-color: rgb(57, 57, 226);
+    background-color: #3c763d;
   }
-  
+
+  #btnSalvar {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #3c763d;
+  }
+
+  #btnViewVisits{
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #3c763d;
+  }
+
   .divTable {
     padding: 10px;
     width: auto; 
@@ -146,27 +165,58 @@ button {
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 999;
+    z-index: 1;
     align-items: center;
     justify-content: center;
   }
-  
-  .modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: white;
-    border-radius: 10px;
-    width: 50%;
+
+  .modal-container-active, .modal-active {
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-container, .modal{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .modal-container-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  .modal-active {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    z-index: 600;
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
   }
   
-  .modal label {
+  .modal-active label {
     font-size: 14px;
     width: 100%;
   }
   
-  .modal input {
+  .modal-active input {
     width: 100%;
     outline: none;
     padding: 5px 10px; 
@@ -177,7 +227,7 @@ button {
     border-right: none;
   }
   
-  .modal button {
+  .modal-active button {
     width: 100%;
     margin: 10px auto;
     outline: none;
@@ -185,7 +235,7 @@ button {
     padding: 5px 10px; 
     width: 100%;
     border: none;
-    background-color: rgb(57, 57, 226);
+    background-color: #3c763d;
     color: white;
   }
   
@@ -193,7 +243,7 @@ button {
     display: flex;
   }
   
-  .active .modal {
+  .active .modal-active {
     animation: modal .4s;
   }
   
@@ -289,7 +339,7 @@ a:hover {
         right: 0px;
         height: 0px;
         background-color: #f8f8f8;
-        z-index: 1000;
+        z-index: 500;
         transition: .4s;
         visibility: hidden;
         overflow-y: hidden;
